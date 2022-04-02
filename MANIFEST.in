@@ -1,0 +1,4 @@
+include requirements.txt
+recursive-include chromedriver/ *
+recursive-include tddner/static/ *
+recursive-include tddner/templates/ *

@@ -1,0 +1,39 @@
+{% extends 'base.j2' %} 
+{% block title %}Named Entity Finder{% endblock title %} 
+{% block content %}
+  <div class="container" id="app">
+
+    <div class="row">
+      <h1 id="heading" data-test-id="heading">Named Entity Finder</h1>
+    </div>
+
+    <div class="row">
+      <div id="labeled-doc" data-test-id="labeled-doc"></div>
+    </div>      
+
+    <form onsubmit="return updateResults(event, document.getElementById('input-text'))" method="POST">
+    {{ form.csrf_token }} 
+    <div class="row ner-input">
+      <div class="col-lg-3 ner-button-col">
+        {{ form.ner_submit() }}
+      </div>
+      <div class="col-lg-9 ner-sentence-col">
+        {{ form.ner_sentence() }}
+      </div>
+    </div>
+    </form>
+
+    <div class="row">
+      <table id="ner-table" data-test-id="ner-table" class="table table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Entity</th>
+            <th scope="col">Type</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+      
+  </div>
+  <script src="{{ url_for('static', filename='ner.js') }}"></script>
+{% endblock content %}

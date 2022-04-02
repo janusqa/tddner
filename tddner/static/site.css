@@ -1,0 +1,13 @@
+#app {
+  max-width: 800px;
+}
+
+.ner-button-col, .ner-sentence-col {
+  padding-left: 0;
+  padding-right:0;
+}
+
+.ner-input {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
