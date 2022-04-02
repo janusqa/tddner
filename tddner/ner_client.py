@@ -1,6 +1,3 @@
-import spacy
-
-
 class NamedEntityClient:
     def __init__(self, model, displacy):
         self.model = model
